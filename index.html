@@ -61,6 +61,13 @@
 				</footer>
 			</div>
 		</div>
+		<?php
+        		$ip_address = $_SERVER['REMOTE_ADDR'];
+			$date_time = date('Y-m-d H:i:s');
+			$file = 'visitors.txt';
+			$data = $ip_address . ' - ' . $date_time . "\n";
+			file_put_contents($file, $data, FILE_APPEND);
+    		?>
     </body>
 	<script src="alireza.js"></script>
 </html>
